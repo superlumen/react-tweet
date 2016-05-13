@@ -73,7 +73,6 @@ class Tweet extends React.Component {
           <Text data={data} />
           {MediaComponent}
           {QuoteComponent}
-          <Footer data={data} />
         </div>
         {modalActive ? <Modal data={data} modalIndex={modalIndex} /> : null}
       </div>
