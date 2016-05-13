@@ -40,9 +40,5 @@
     "react-videojs": "0.0.2",
     "twemoji": "^1.4.1",
     "twitter-text": "^1.13.2"
-  },
-  "peerDependencies": {
-    "react": "0.14.0",
-    "react-dom": "0.14.0"
   }
 }
