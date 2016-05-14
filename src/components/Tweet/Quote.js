@@ -8,7 +8,7 @@ class Quote extends React.Component {
 
     return (
       <div className="QuoteTweet" style={styles.QuoteTweet}>
-        <a className="QuoteTweet-link" style={styles.QuoteLink} href={`https://twitter.com/${data.user.screen_name}/status/${data.id_str}`} />
+        <a className="QuoteTweet-link" style={styles.QuoteLink} />
         <div className="QuoteTweet-innerContainer" style={styles.QuoteTweetInner}>
           <div className="QuoteTweet-originalAuthor" style={styles.QuoteTweetAuthor}>
             <b>{data.user.name}</b>
@@ -30,4 +30,3 @@ Quote.propTypes = {
 Quote.displayName = 'Quote'
 
 export default Quote
-

@@ -31,6 +31,8 @@ class Text extends React.Component {
     text = twemoji.parse(text)
     text = text.replace(/<img class="emoji"/g, '<img class="emoji" style="height:14px;margin-right:5px;"')
 
+    // Remove all href="", we don't want actual links
+    text = text.replace(/href="[^"]*"/g, '')
 
     const tweetProps = {
       'className': 'tweet-text',

@@ -3,14 +3,6 @@ import styles from './styles'
 import {cloneDeep} from './utils'
 
 class Photos extends React.Component {
-  constructor (props, context) {
-    super(props, context)
-  }
-
-  onClick (idx) {
-    this.context.toggleModal(idx)
-  }
-
   render () {
     let {media} = this.props
 
@@ -185,7 +177,7 @@ class Photos extends React.Component {
 
 
       mediaElements.push(
-        <div onClick={this.onClick.bind(this, i)} className="AdaptiveMedia-photoContainer" style={containStyle} key={i}>
+        <div className="AdaptiveMedia-photoContainer" style={containStyle} key={i}>
           <img src={m.media_url} style={photoStyle} />
         </div>
       )
@@ -200,10 +192,6 @@ class Photos extends React.Component {
   }
 }
 
-Photos.contextTypes = {
-  'toggleModal': React.PropTypes.func
-}
-
 Photos.propTypes = {
   'media': React.PropTypes.array
 }
@@ -211,4 +199,3 @@ Photos.propTypes = {
 Photos.displayName = 'Photos'
 
 export default Photos
-

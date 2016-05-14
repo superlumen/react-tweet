@@ -3,44 +3,11 @@ import Context from './Context'
 import Header from './Header'
 import Text from './Text'
 import Media from './Media'
-import Modal from './Modal'
 import Quote from './Quote'
-import Footer from './Footer'
 import styles from './styles'
 
 class Tweet extends React.Component {
-  constructor (props) {
-    super(props)
-    this.toggleModal = this.toggleModal.bind(this)
-    this.closeModal = this.closeModal.bind(this)
-    this.state = {
-      'modalActive': false,
-      'modalIndex': 0
-    }
-  }
-
-  toggleModal (idx) {
-    this.setState({
-      'modalActive': true,
-      'modalIndex': idx
-    })
-  }
-
-  closeModal () {
-    this.setState({
-      'modalActive': false
-    })
-  }
-
-  getChildContext () {
-    return {
-      'toggleModal': this.toggleModal,
-      'closeModal': this.closeModal
-    }
-  }
-
   render () {
-    const {modalActive, modalIndex} = this.state
     let {data} = this.props, isRT = false
     let MediaComponent = null, QuoteComponent = null
 
@@ -74,15 +41,9 @@ class Tweet extends React.Component {
           {MediaComponent}
           {QuoteComponent}
         </div>
-        {modalActive ? <Modal data={data} modalIndex={modalIndex} /> : null}
       </div>
     )
   }
-}
-
-Tweet.childContextTypes = {
-  'toggleModal': React.PropTypes.func,
-  'closeModal': React.PropTypes.func
 }
 
 Tweet.propTypes = {
