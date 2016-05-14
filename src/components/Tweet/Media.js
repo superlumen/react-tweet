@@ -7,8 +7,6 @@ class Media extends React.Component {
     switch (this.props.media[0].type) {
       case 'photo':
         return <Photos {... this.props} />
-      case 'video':
-        return <Video {... this.props} />
       case 'animated_gif':
         return <Video gif={true} {... this.props} />
       default:
