@@ -31,7 +31,7 @@ class Header extends React.Component {
 
     return (
       <div className="header">
-        <a className="account-group" style={styles.accountGroup} href={`http://twitter.com/${data.user.screen_name}`}>
+        <a className="account-group" style={styles.accountGroup}>
           <img className="avatar" src={data.user.profile_image_url} style={styles.avatar} />
           <strong className="fullname" style={styles.fullname}>{data.user.name}{' '}</strong>
           <span>&rlm;</span>
@@ -41,7 +41,7 @@ class Header extends React.Component {
           </span>
         </a>
         <small className="time" style={styles.time}>
-          <a href={`http://twitter.com/${data.user.screen_name}/status/${data.id_str}`} className="tweet-timestamp" style={styles.timestamp}>
+          <a className="tweet-timestamp" style={styles.timestamp}>
             {' • '}{timestamp}
           </a>
         </small>
@@ -59,4 +59,3 @@ Header.defaultProps = {
 Header.displayName = 'Header'
 
 export default Header
-
